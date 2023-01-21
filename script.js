@@ -1,13 +1,53 @@
-
 /*let encodeText=prompt("Ingrese el texto a codificar");
 
 document.write(encode(encodeText));*/
 
-let decodeText=prompt("Ingrese el texto a decodificar");
+//let decodeText=prompt("Ingrese el texto a decodificar");
 
-document.write(decode(decodeText));
+//document.write(decode(decodeText));
+
+const text = document.querySelector(".text-area");
+const mensaje = document.querySelector(".mensaje");
+
+function btnEncriptar() {
+  const textoEncriptado = encode(text.value);
+  text.value = "";
+  mensaje.innerHTML = `
+  <textarea name="cajaRespuesta" id="cajaRespuesta" readonly="readonly">${textoEncriptado}</textarea>
+  <button id="copiar" onclick="copiar()">Copiar</button>
+  `;
+}
+
+function btnDesencriptar() {
+  const textoDesencriptado = decode(text.value);
+  text.value = "";
+  mensaje.innerHTML = `
+  <textarea name="cajaRespuesta" id="cajaRespuesta" readonly="readonly">${textoDesencriptado}</textarea>
+  <button id="copiar" onclick="copiar()">Copiar</button>
+  `;
+}
+
+function validarInformacion(textoIngresado) {
+  if (textoIngresado == "") {
+    alert("Ingresa un texto primero");
+    return false;
+  } else {
+    vocalesTilde = ["á", "é", "í", "ó", "ú"];
+    for (let i = 0; i < textoIngresado.length; i++) {
+      for (let j = 0; j < vocalesTilde.length; j++) {
+        if (textoIngresado[i] == vocalesTilde[j]) {
+          alert("No se permiten acentos en tu texto");
+          return false;
+        }
+      }
+    }
+  }
+  return true;
+}
 
 function encode(text) {
+  text = text.toLowerCase();
+  if (validarInformacion(text)) {
     // Inicializamos una variable para almacenar el texto codificado
     let encodedText = "";
 
@@ -38,12 +78,17 @@ function encode(text) {
           encodedText += char;
       }
     }
-
     // Devolvemos el texto codificado
     return encodedText;
+  } else {
+    location.reload();
+    return "";
   }
+}
 
-  function decode(text) {
+function decode(text) {
+  text = text.toLowerCase();
+  if (validarInformacion(text)) {
     // Inicializamos una variable para almacenar el texto decodificado
     let decodedText = "";
 
@@ -104,4 +149,17 @@ function encode(text) {
     }
 
     return decodedText;
+  } else {
+    location.reload();
+    return "";
   }
+}
+
+function copiar() {
+  var textoRespuesta = document.getElementById("cajaRespuesta");
+  textoRespuesta.select();
+  document.execCommand("copy");
+
+  //Limpiar Caja de Texto
+  document.getElementById("cajaTexto").value = "";
+}

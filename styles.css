@@ -19,9 +19,12 @@ main {
 }
 
 .text-area {
-  width: 70%;
+  width: 750px;
   height: 264px;
   border: none;
+  font-size: 32px;
+  resize: none;
+  line-height: 40px;
   color: #0a3871;
   margin-top: 90px;
   text-transform: lowercase;
@@ -53,7 +56,7 @@ main {
   background-color: white;
   width: 85%;
   margin: auto;
-  padding-top: 10px;
+  padding-top: 20px;
 }
 
 .mensaje h6 {
@@ -78,6 +81,21 @@ main {
   font-weight: 400;
   font-size: 16px;
   line-height: 150%;
+}
+
+#cajaRespuesta {
+  width: 400px;
+  height: 400px;
+  background: white;
+  border: none;
+  border-radius: 24px;
+  resize: none;
+  color: #0a3871;
+  padding: 50px;
+  position: absolute;
+}
+#cajaRespuesta:focus{
+  outline: none;
 }
 
 .botones {
@@ -114,4 +132,26 @@ main {
   gap: 8px;
   color: #495857;
   font-size: 12px;
+}
+
+.informacion h6 {
+  margin: 26px;
+}
+
+.resultado {
+  font-weight: 400;
+  font-size: 24px;
+  color: #495057;
+}
+
+#copiar{
+  background: #d8dfe8;
+  border: 1px solid #0a3871;
+  border-radius: 24px;
+  color: #0a3871;
+  cursor: pointer;
+  height: 67px;
+  margin-left: 30px;
+  margin-top: 425px;
+  width: 328px;
 }
