@@ -155,3 +155,59 @@ main {
   margin-top: 425px;
   width: 328px;
 }
+
+
+@media screen and (min-width:0px) and (max-width:375px){
+
+  .logo{
+    width: 7%;
+  }
+
+  main{
+    display: block;
+    margin-bottom: 50px;
+    margin-left: 5px;
+    width: 90%;
+  }
+
+  .text-area{
+    width: 375px;
+    margin-top: 40px;
+    margin-right: 5px;
+  }
+
+  .mensaje {
+    width: 375px;
+    margin: 0px;
+  }
+  .mensaje img {
+    display: none;
+  }
+  .informacion{
+    width: 375px;
+  }
+  .informacion h6{ 
+    margin: 10px;
+  }
+
+  .botones{
+    display: block;
+  }
+
+  .btn-encriptar {
+    width: 375px;
+  }
+
+  .btn-desencriptar{
+    width: 375px;
+    margin-left: 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  #cajaRespuesta{
+    width: 375px;
+    padding: 10px;
+  }
+
+}
