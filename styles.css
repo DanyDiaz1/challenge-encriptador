@@ -214,4 +214,9 @@ main {
     padding: 10px;
   }
 
+  #copiar{
+    width: 370px;
+    margin: auto;
+  }
+
 }
