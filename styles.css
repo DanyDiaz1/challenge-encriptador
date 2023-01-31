@@ -18,7 +18,7 @@
 
 main {
   display: flex;
-  margin-bottom: 50px;
+  margin-bottom: 35px;
   margin-left: 80px;
 }
 
@@ -182,7 +182,14 @@ main {
 }
 
 
-@media screen and (min-width:0px) and (max-width:375px){
+footer h6{
+  width: 100%;
+  text-align: center;
+  margin: auto;
+}
+
+
+@media screen and (min-width:0px) and (max-width:420px){
 
   .logo{
     width: 7%;
@@ -239,5 +246,6 @@ main {
     width: 370px;
     margin: auto;
   }
+
 
 }
